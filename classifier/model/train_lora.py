@@ -157,7 +157,7 @@ training_args = TrainingArguments(
 # =============================
 
 data_collator = DataCollatorWithPadding(
-    tokenizer = tokenizer
+    processing_class = tokenizer
 )
 
 import evaluate
