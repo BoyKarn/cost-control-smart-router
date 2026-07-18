@@ -142,7 +142,7 @@ training_args = TrainingArguments(
     bf16=False,
 
     logging_steps=10,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     save_strategy="epoch",
     save_total_limit=2,
 
