@@ -99,7 +99,6 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=3,
     id2label=ID2LABEL,
     label2id=LABEL2ID,
-    torch_dtype=torch.float16,
     device_map="auto"
 )
 
