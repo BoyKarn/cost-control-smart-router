@@ -18,6 +18,9 @@ from transformers import (
 )
 from peft import LoraConfig, get_peft_model, TaskType
 from transformers import set_seed
+from kaggle_secrets import UserSecretsClient
+
+hf_token = UserSecretsClient().get_secret("HF_TOKEN")
 
 # =============================
 # 1. BASIC SETUP
