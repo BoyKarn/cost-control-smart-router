@@ -73,7 +73,7 @@ dataset["validation"] = dataset["validation"].shuffle(seed=42).select(range(500)
 # 3. TOKENIZER
 # =============================
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, token=hf_token)
 
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
@@ -99,6 +99,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=3,
     id2label=ID2LABEL,
     label2id=LABEL2ID,
+    token=hf_token
 )
 
 # IMPORTANT FIXES
