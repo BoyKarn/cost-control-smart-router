@@ -99,7 +99,6 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=3,
     id2label=ID2LABEL,
     label2id=LABEL2ID,
-    device_map="auto"
 )
 
 # IMPORTANT FIXES
@@ -141,7 +140,7 @@ training_args = TrainingArguments(
     bf16=False,
 
     logging_steps=10,
-    eval_strategy="epoch",
+    evaluation_strategy="epoch",
     save_strategy="epoch",
     save_total_limit=2,
 
@@ -178,7 +177,7 @@ trainer = Trainer(
     args=training_args,
     train_dataset=dataset["train"],
     eval_dataset=dataset["validation"],
-    processing_class=tokenizer,
+    tokenizer=tokenizer,
     data_collator=data_collator,
     compute_metrics=compute_metrics,
 )
