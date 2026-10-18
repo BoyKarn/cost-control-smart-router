@@ -41,7 +41,7 @@ print("Using device:", device)
 # 2. LOAD DATASET
 # =============================
 
-dataset = load_dataset("akorn14/router-classifier-dataset")
+dataset = load_dataset("akorn14/router-classifier-dataset",token=hf_token)
 
 print(dataset)
 
