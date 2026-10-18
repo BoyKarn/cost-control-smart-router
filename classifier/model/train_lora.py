@@ -102,7 +102,8 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=3,
     id2label=ID2LABEL,
     label2id=LABEL2ID,
-    token=hf_token
+    token=hf_token,
+    torch_dtype=torch.float16
 )
 
 # IMPORTANT FIXES
